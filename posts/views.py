@@ -1,6 +1,7 @@
 from django.shortcuts import render
-
+from django.views.generic.list import ListView
 from django.http import HttpResponse, JsonResponse
+from .models import Post
 # Create your views here.
 def url_views(request):
     print('url_views()')
@@ -22,3 +23,7 @@ def function_view(request):
     if request.method =='POST':
         print(f'request.POST:{request.POST}')
     return render(request,'view.html')
+
+class class_view(ListView):
+    model = Post
+    template_name ='cbv_view.html'

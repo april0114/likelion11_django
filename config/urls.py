@@ -22,4 +22,5 @@ urlpatterns = [
     path('urls/', url_views),
     path('url/<str:username>/', url_parameter_view),
     path('fbv/',function_view),
+    path('cbv/', cbv_view.as_view()),
 ]
