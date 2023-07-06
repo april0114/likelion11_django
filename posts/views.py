@@ -1,8 +1,26 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.http import HttpResponse, JsonResponse
-from .models import Post
+#from .models import Post
 # Create your views here.
+def index(request):
+    return render(request, 'index.html')
+
+def post_confirm_delete_view(request, id):
+    return render(request, 'posts/post_confirm_delete.html')
+
+def post_detail_view(request, id):
+    return render(request, 'posts/post_detail.html')
+
+def post_create_view(request):
+    return render(request, 'posts/post_form.html')
+
+def post_update_view(request, id):
+    return render(request, 'posts/post_form.html')
+
+def post_list_view(request):
+    return render(request, 'posts/post_list.html')
+
 def url_views(request):
     print('url_views()')
     data = {'code':'001', 'msg':'ok'}
@@ -24,6 +42,6 @@ def function_view(request):
         print(f'request.POST:{request.POST}')
     return render(request,'view.html')
 
-class class_view(ListView):
-    model = Post
-    template_name ='cbv_view.html'
+#class class_view(ListView):
+#    model = Post
+#    template_name ='cbv_view.html'
