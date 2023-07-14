@@ -1,23 +1,12 @@
 {% extends 'base.html' %} <!--상속을 받겠다라는 태그-->
-{% block tittle %}인덱스{% endblock %}
+{% load static %}
+
+{% block tittle %}홈{% endblock %}
 
 {% block content %}
 <main>
-    <h1>인덱스 화면</h1>
-    <div class="card-list">
-        <p>다음 영상에서 만들기</p>
-    </div>
-    <div>
-        <nav>
-            <ul class="bottom-menu-group" >
-                <li>home</li>
-                <li>검색</li>
-                <li>글쓰기</li>
-                <li>좋아요</li>
-                <li>프로필</li>
-
-            </ul>
-        </nav>
+    <div class="card-list ">
+        {% include 'mixin/posts/post_card.html' %}
     </div>
 </main>
 {% endblock %}
