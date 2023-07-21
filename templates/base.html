@@ -10,10 +10,11 @@
     <link href="stylesheet" href="{% static 'css/index.css' %}">
 
 
-    <title>{% block tittle %}{% endblock %} 라이언 그램</title>
+    <title>{% block tittle %}{% endblock %} 라이언 그램</title
+        >
 </head>
 
-<body class ="container">
+<body class="container">
     <div>
         {% block content %}
         {% endblock %}
@@ -24,7 +25,11 @@
 
                 <li><img src="{% static 'icons/home.png'%}" alt="home"></li>
                 <li><img src="{% static 'icons/search.png'%}" alt="search"></li>
-                <li><img src="{% static 'icons/write.png'%}" alt="write"></li>
+                <li>
+                    <a href="{% url 'posts:post-create' %}">
+                        <img src="{% static 'icons/write.png'%}" alt="write">
+                    </a>
+                </li>
                 <li><img src="{% static 'icons/like.jpg'%}" alt="like"></li>
                 <li><img src="{% static 'icons/profile.png'%}" alt="profile"></li>
 
